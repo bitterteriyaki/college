@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "ihc"
+version = "0.1.0"
+description = "Projeto contendo o código dos trabalhos práticos de Interação Humano-Computador."
+authors = ["kyomi <me@kyomi.dev>"]
+license = "MIT"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+sphinxawesome-theme = "^5.1.4"
+sphinx-design = "^0.5.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
