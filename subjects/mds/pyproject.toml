@@ -1,0 +1,52 @@
+[tool.poetry]
+name = "mds"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^4.2.7"
+psycopg2 = "^2.9.9"
+django-environ = "^0.11.2"
+django-guardian = "^2.4.0"
+django-bootstrap-v5 = "^1.0.11"
+django-crispy-forms = "^2.1"
+crispy-bootstrap5 = "^2023.10"
+gunicorn = "^21.2.0"
+whitenoise = "^6.6.0"
+celery = {extras = ["librabbitmq"], version = "^5.3.6"}
+djangocodemirror = "^2.1.0"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.5.0"
+black = "^23.11.0"
+isort = "^5.12.0"
+commitizen = "^3.12.0"
+flake8 = "^6.1.0"
+mypy = "^1.6.1"
+django-stubs = {extras = ["compatible-mypy"], version = "^4.2.6"}
+coverage = "^7.3.2"
+celery-types = "^0.20.0"
+
+[tool.poetry.group.docs]
+optional = true
+
+[tool.poetry.group.docs.dependencies]
+sphinx = "^7.1.2"
+sphinxawesome-theme = {version = "^5.0.0b3", allow-prereleases = true}
+sphinx-design = "^0.5.0"
+
+[tool.black]
+color = true
+line-length = 79
+
+[tool.isort]
+profile = "black"
+line_length = 79
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

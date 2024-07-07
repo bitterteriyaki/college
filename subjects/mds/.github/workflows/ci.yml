@@ -1,0 +1,85 @@
+name: Upload data to integrations
+
+on:
+  push:
+  pull_request:
+    types:
+      - reopened
+
+env:
+  CLOUDAMQP_URL: "amqp://virtualjudge:virtualjudge@localhost:5672//"
+  POSTGRES_HOST: localhost
+  POSTGRES_PORT: 5432
+  POSTGRES_USER: virtualjudge
+  POSTGRES_PASSWORD: virtualjudge
+  POSTGRES_DB: virtualjudge
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    services:
+      rabbitmq:
+        image: rabbitmq:3.12.9-alpine
+        env:
+          RABBITMQ_DEFAULT_USER: virtualjudge
+          RABBITMQ_DEFAULT_PASS: virtualjudge
+        ports:
+          - 5672:5672
+      postgresql:
+        image: postgres:16.0-alpine
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_USER: virtualjudge
+          POSTGRES_PASSWORD: virtualjudge
+          POSTGRES_DB: virtualjudge
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: ["3.11"]
+        poetry-version: ["1.6.1"]
+    env:
+      DATABASE_URL: "postgres://virtualjudge:virtualjudge@localhost:5432/virtualjudge"
+      CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install Poetry ${{ matrix.poetry-version }}
+        uses: snok/install-poetry@v1
+        with:
+          version: ${{ matrix.poetry-version }}
+          virtualenvs-create: false
+          installer-parallel: true
+
+      - name: Install dependencies
+        run: |
+          poetry run pip install --no-deps --upgrade pip
+          poetry install --with dev
+
+      - name: Generate configuration file
+        run: ./bin/create-env
+
+      - name: Generate tests coverage report
+        run: |
+          poetry run coverage run \
+            --source="." manage.py test \
+            --settings=server.settings.development
+          poetry run coverage xml
+
+      - name: Upload tests coverage report (Codecov)
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage.xml
+
+      - name: Upload tests coverage report (Code Climate)
+        uses: paambaati/codeclimate-action@v3.2.0
+        with:
+          coverageCommand: coverage report
