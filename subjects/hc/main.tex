@@ -1,0 +1,456 @@
+\documentclass[
+	12pt,
+	openright,
+	twoside,
+	a4paper,
+	english,
+	french,
+	spanish,
+	brazil
+]{abntex2}
+
+% ----------------
+% Pacotes básicos.
+% ----------------
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{microtype}
+
+% --------------------
+% Pacotes de citações.
+% --------------------
+\usepackage[brazilian,hyperpageref]{backref}
+\usepackage[alf]{abntex2cite}
+
+% -------------------------
+% Configurações de pacotes.
+% -------------------------
+
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+\renewcommand{\backref}{}
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1
+		Nenhuma citação no texto.
+	\or
+		Citado na página #2.
+	\else
+		Citado #1 vezes nas páginas #2.
+	\fi
+}
+
+% ------------------------------------------------
+% Informações de dados para capa e folha de rosto.
+% ------------------------------------------------
+\titulo{A Era do Cativeiro Digital e a Ditadura do Comportamento}
+\autor{
+  Caio Alexandre Ornelas Silva (221007644) \\ Danilo Augusto Ligiero (221007967)
+}
+\local{Brasília, Brasil}
+\data{2023}
+\orientador{Vanessa Maria de Castro}
+\instituicao{
+  Universidade de Brasília - UnB
+  \par
+  Faculdade UnB Gama - FGA
+  \par
+  Engenharias
+}
+\tipotrabalho{Ensaio}
+
+% ---------------------------------------
+% Espaçamentos entre linhas e parágrafos.
+% ---------------------------------------
+\setlength{\parindent}{1.3cm}
+\setlength{\parskip}{0.2cm}
+
+% -----------------
+% Compila o índice.
+% -----------------
+\makeindex
+
+% --------------------
+% Início do documento.
+% --------------------
+\begin{document}
+  \selectlanguage{brazil}
+  \frenchspacing
+  \imprimircapa
+  \imprimirfolhaderosto*
+
+  % --------
+  % Resumos.
+  % --------
+  \setlength{\absparsep}{18pt}
+  \begin{resumo}
+    Este ensaio tem o objetivo de expor e colocar em debate a temática
+    ``Capitalismo de Vigilância e a Erosão da Privacidade'' que é de extrema
+    importância e muitas vezes passa despercebido pela sociedade no geral, mas
+    que sempre está presente no cotidiano. Este ensaio terá como principal
+    referência teórica a obra de Shoshana Zuboff, ``A Era do Capitalismo de
+    Vigilância'', que aborda a respeito do uso da tecnologia para exploração
+    inserido em um contexto da vida moderna. Porém, tambem serão utilizados
+    grandes pensadores como Montesquieu e Foucault afim de tornar mais completo
+    e sólido todo o estudo do debate.
+
+    \textbf{Palavras-chave}:
+      Capitalismo de Vigilância, Privacidade, Tecnologia, Sociedade.
+  \end{resumo}
+
+  % ------------------
+  % Inserir o sumário.
+  % ------------------
+  % \pdfbookmark[0]{\contentsname}{toc}
+  % \tableofcontents*
+  % \cleardoublepage
+
+  % -------------------
+  % Elementos textuais.
+  % -------------------
+  \textual
+
+  % -----------
+  % Introdução.
+  % -----------
+  \chapter{Introdução}
+
+  De acordo com a \citeauthoronline{harari-sapiens}, as primeiras grandes
+  tecnologias criadas pela humanidade talvez sejam a invenção das ferramentas de
+  pedra (há 2,5 milhões de anos), a descoberta e aperfeiçoamento do uso do fogo
+  (há 300 mil anos), além da invenção da agricultura e da construção de barracos
+  para moradia (há 12 mil anos) \cite{harari-sapiens}. Já na atualidade tem-se a
+  internet, que caminha mais recentemente com a inteligência artificial
+  (especificamente IAs generativas), como o principal personagem coadjuvante no
+  cenário tecnológico, mas também da própria realidade. A internet ganhou tanta
+  força que hoje não se pode viver usufruindo da modernidade e urbanização sem o
+  uso constante dela. Partindo destes pontos, é mais fácil debater como o viés
+  do uso do poder direcionado ao controle massificado (da grande sociedade),
+  através de ferramentas como a internet e tecnologias de vigilância, é
+  praticado e a forma como isso afeta a sociedade e o indivíduo.
+
+  Nesse contexto, é possível observar que esse processo que se iniciou há cerca
+  de 2,5 milhões de anos ocorreu não somente com o objetivo natural intrínseco
+  de evolução, mas também com um viés de uso de tais ferramentas para exercer
+  poder e controle. No entanto, esse viés não está contido em todo processo,
+  provavelmente se inicia de forma mais recente na história na época das
+  primeiras civilizações fixas, onde a dinâmica de poder muda completamente e as
+  relações políticas entre os indivíduos ganha um palco maior. Isso pode ser
+  visto mais fortemente depois do surgimento do capitalismo (século XV-XVI) na
+  Europa, mais especificamente após a Terceira Revolução Industrial, onde se
+  teve a invenção dos computadores.
+  \citeauthoronline{zuboff-capitalismo-vigilancia} mostra em sua obra
+  ``Capitalismo de Vigilância'' exatamente como esse viés é aplicado no atual
+  contexto capitalista tecnológico, além de fazer uma profunda análise à
+  respeito de diversos aspectos contidos nisso.
+
+  A era da internet e suas tecnologias (Terceira Revolução Industrial) podem ser
+  descritas como um enorme avanço tecnológico para a humanidade, visto que
+  trouxe consigo muitas inovações positivas para a sociedade. Essas inovações
+  foram responsáveis por globalizar o mundo e conectar as pessoas através de,
+  por exemplo, plataformas de rede sociais, mas ao mesmo tempo também se
+  tornaram grandes ferramentas de controle sistemático e massificado da opinião
+  pública e do comportamento da população pelas que detém o poder dessas
+  plataformas.
+
+  % ----------------
+  % Desenvolvimento.
+  % ----------------
+  \chapter{O Cativeiro Digital}
+
+  \section{A Ideia de Vigilância}
+
+  Um grande pensador que aborda a respeito do uso do poder com fins de controle
+  e vigilância é \citeauthoronline{foucault-vigiar-punir}. Foucault apresenta
+  seus conceitos que são de extrema importância para o entendimento do que é
+  vigilância, através do uso do Panóptico, que é um termo concebido pelo
+  filósofo \citeauthoronline{bentham-panoptico} em 1785
+  \cite{bentham-panoptico}. Esse termo designa a ideia de uma penitenciária
+  vigilante consegue observar todos os prisioneiros, de forma que estes não
+  ideal (perfeita) onde um único possam saber se estão ou não sendo observados.
+  O Panóptico faz a inversão entre o ato de reprimir e produzir, onde a
+  disciplina é invertida deixando de ser punitiva e repressiva e passa a ser
+  modeladora do comportamento de forma interna ao indivíduo
+  \cite{trindade-foucault-panoptico}.
+
+  Partindo de um ponto de vista histórico, é observável que o uso do poder no
+  geral iniciou-se pela aplicação direta da força, que naturalmente para o ser
+  humano era sua principal fonte de poder de forma mais imediata. Porém, com o
+  passar do tempo o ser humano como espécie foi desenvolvendo sua faculdade
+  cognitiva e passou a utilizar proporcionalmente menos seu poder físico e mais
+  sua capacidade de pensar, ou seja, deixando de exercer poder externamente e
+  passando para o interno. Ao invés de controlar grandes grupos de pessoas
+  através da força física, reprimindo e punindo fisicamente (como, por exemplo,
+  a escravidão de forma geral), atualmente os indivíduos em posição de poder
+  perceberam que é mais efetivo controlar a mente das massas. Isso tem reflexo
+  direto no uso constante de ferramentas digitais no mundo moderno.
+
+  De acordo com as análises de Foucault, ele destaca as práticas punitivas ao
+  longo do tempo, desde os suplícios públicos até a ascensão da prisão como
+  instrumento central de controle \cite{foucault-vigiar-punir}. A análise
+  detalhada dessas mudanças revela como as instituições moldam não apenas o
+  corpo, mas também as mentes dos indivíduos. Nesse sentido, é possível combinar
+  as ideias de \citeauthoronline{zuboff-capitalismo-vigilancia} com a ideia de
+  vigilância de Foucault, e a compreensão dessa mescla se mostra relevante ao
+  examinarmos as dinâmicas das redes sociais e tecnologias de conexão
+  massificada, onde a vigilância assume formas digitais, mas não menos e sim
+  exponencialmente mais impactantes e eficazes.
+
+  \newpage
+
+  \section{Controle de Narrativas}
+
+  O livro ``1984'', escrito por \citeauthoronline{orwell-1984}, é uma obra de
+  ficção distópica que se passa em um futuro autoritário. Neste futuro é criado
+  um ``Ministério da Verdade'', que trabalha para alterar registros históricos
+  para se adequar à narrativa do Partido \cite{orwell-1984}. Por mais que a obra
+  se trate de uma realidade fictícia, é possível traçarmos um paralelo com a
+  sociedade atual, onde o autoritarismo praticado pelo Partido agora é feito por
+  empresas \textit{big techs} de acordo com seus interesses.
+
+  Esse controle autoritário se dá devido ao poder que essas empresas têm sobre o
+  conteúdo que é inserido dentro das redes sociais através de complexos
+  algoritmos e inteligências artificiais. Elas podem controlar que tipo de
+  opinião pública será engajada ou não ou como anúncios serão exibidos para o
+  usuário, podendo ser extremamente invasivos, como visto pelo escândalo de
+  dados da Cambridge Analytica em 2018 \cite{chan-cambridge-analytica}. Esse é
+  um exemplo de como empresas exercem um controle quase que imperceptível em
+  seus usuários para manipular seus pensamentos e comportamentos, moldando uma
+  realidade digital sob medida para seus interesses comerciais e isso seria a
+  personalização digital.
+
+  Semelhante ao Ministério da Verdade em ``1984'', as \textit{big techs} assumem
+  o papel de \textit{gatekeepers} da informação, decidindo quais narrativas são
+  amplificadas e quais são suprimidas. Esse controle sobre a verdade e a
+  narrativa não apenas reflete, mas também influencia a opinião pública, gerando
+  preocupações sobre a manipulação da democracia e a liberdade de expressão. O
+  paralelo entre a distopia de \citeauthoronline{orwell-1984} e a realidade
+  contemporânea é evidente na vigilância constante exercida por empresas que
+  coletam e utilizam dados pessoais de maneira ubíqua e não transparente. A obra
+  alerta para o perigo de um Estado totalitário que controla a realidade e hoje
+  vemos entidades não governamentais exercendo um poder igualmente impactante,
+  se não mais.
+
+  Além disso, a noção de Novilíngua em ``1984'', uma linguagem manipulada para
+  limitar o pensamento crítico, encontra eco na forma como o discurso online é
+  moldado pelas plataformas digitais. Palavras são censuradas, algoritmos
+  decidem o que é aceitável, e a diversidade de pensamento muitas vezes é
+  sufocada em prol da conformidade com as diretrizes impostas.
+
+  Em última análise, ``1984'' permanece relevante, pois serve como um aviso
+  sobre os perigos do controle totalitário e da manipulação da informação. Ao
+  observar a interseção entre a ficção distópica e a realidade contemporânea,
+  somos instigados a refletir criticamente sobre os desafios éticos e sociais
+  que enfrentamos em uma era digital dominada por algoritmos e interesses
+  corporativos.
+
+  \newpage
+
+  \section{O Uso do Poder}
+
+  \citeauthoronline{maquiavel-principe}, em ``O Príncipe'', aborda a natureza do
+  poder e as estratégias para mantê-lo. Ele argumenta que o governante eficaz
+  deve ser astuto e adaptável, utilizando meios que se adequem às circunstâncias
+  para manter o controle e a estabilidade em seu principado. Há uma ênfase na
+  necessidade de manter o poder de forma eficaz, muitas vezes por meio de
+  estratégias que podem ser consideradas cruéis ou pragmáticas
+  \cite{maquiavel-principe}. Nesse sentido, seguindo essa logica do uso do
+  poder, atualmente os indivíduos em posições de poder (e essas posições são
+  variadas) seguem o mesmo pensamento da época do príncipe Lourenço de Médici,
+  no sentido de utilizar técnicas e ferramentas sistemáticas para permanecer em
+  tais posições. \citeauthoronline{zuboff-capitalismo-vigilancia} evidencia isso
+  relacionando o contexto da evolução das altas tecnologias (maior enfoque na
+  internet) justamente com a manutenção do \textit{status quo} e monitoramento
+  massificado.
+
+  Ao relacionar essas ideias com a dinâmica da era do cativeiro digital,
+  percebemos paralelos na forma como as empresas de tecnologia e plataformas de
+  mídia social empregam estratégias de controle e influência.
+  \citeauthoronline{maquiavel-principe} destacaria a importância de conhecer
+  profundamente aqueles que estão sob seu domínio, uma habilidade que as
+  \textit{big techs} demonstram ao coletar e analisar dados massivos sobre os
+  usuários. Esses dados massivos sao chamados de \textit{big data}, que de forma
+  resumida é a reunião de diversas outras informações menores (a
+  \textit{small data}) de cada indivíduo e elas são extraídas em transações
+  econômicas, internet das coisas, dados governamentais e corporativos, câmeras
+  de vigilâncias públicas e privadas. Essas \textit{small datas} e
+  \textit{big datas} são agregados, analisados, manipulados, embalados e
+  posteriormente vendidos, e isso é denominado como \textit{data exhaust}. A
+  ditadura do comportamento também pode ser relacionada à visão maquiavélica de
+  que, em alguns casos, a manutenção do poder pode exigir medidas rigorosas. No
+  universo digital, algoritmos são ajustados para moldar o comportamento dos
+  usuários, seja através de sugestões personalizadas de conteúdo, seja por meio
+  de anúncios direcionados. Essas práticas refletem a busca pela manutenção do
+  controle sobre a atenção e o engajamento dos usuários.
+
+  Outro importante conceito introduzido pela
+  \citeauthoronline{zuboff-capitalismo-vigilancia} é a chamada ``textualização
+  eletrônica''. Em suma, este conceito explica como que cada vez mais as ações e
+  até os pensamentos das pessoas sao mediados por computadores
+  \cite{zuboff-capitalismo-vigilancia}. Com o constante aumento do uso e
+  consequentemente da dependência das máquinas para a realização de tarefas
+  cotidianamente simples, o ser humano cada vez mais precisa traduzir e
+  estruturar todas as suas ações para fazer que o computador entenda o que é
+  pedido.
+
+  \newpage
+
+  Um exemplo atual é o algoritmo da seção \textit{For You} do Twitter, que ficou
+  código aberto em 2023 \cite{github-for-you}. Fazendo uma análise estática do
+  código (ou seja, sem executá-lo), é possível notar que este algoritmo coleta
+  dados de métricas relacionados ao posicionamento político do usuário, como por
+  exemplo, se ele é um ``democrata'' ou ``republicano''. Esses dados são
+  coletados como métricas pelo Twitter, porém o que é feito com esses dados não
+  é transparente com os usuários.
+
+  Assim como Maquiavel advogava por uma abordagem pragmática e adaptável para
+  governar, as empresas na era digital frequentemente ajustam suas estratégias
+  de controle com base nas mudanças nas tendências de comportamento online. A
+  análise e manipulação de dados, à luz das ideias maquiavélicas, tornam-se
+  ferramentas essenciais na dinâmica do cativeiro digital. A constante adaptação
+  do que é exposto, vendido, discutido e problematizado nas mídias é uma forte
+  característica do funcionamento do capitalismo atualmente. Dessa forma, a
+  mercadoria da vez são as \textit{small datas} as quais estão em constante
+  mudança e adaptação, assim para as empresas conseguirem textualizar as ações
+  humanas controlando com eficácia o comportamento e o pensamento humano, é
+  preciso que elas também se adaptem modelando suas ações para sistematizar e
+  massificar cada vez mais de forma constante com o objetivo de controlar e
+  vigiar a população \cite{zuboff-capitalismo-vigilancia}.
+
+  Atualmente, como foi dito anteriormente, a mercadoria ``do momento'' é a
+  informação do indivíduo. A transformação dessas informações em mercadoria
+  útil que pode ser disponibilizada para venda e para exercer poder através do
+  controle, é o chamado ``\textit{Capitalismo de vigilância}''. É um novo
+  momento no modo de produção capitalista onde a informação sobre a ação humana
+  (ou textualização da ação humana) tem um papel importante para o
+  desenvolvimento do valor sobre as coisas. Prever o que as pessoas vão querer
+  ou até fazê-las quererem coisas específicas.
+
+  \begin{citacao}
+    Essa nova forma de capitalismo de informação procura prever e modificar o
+    comportamento humano como meio de produzir receitas e controle de mercado
+    \cite{zuboff-capitalismo-vigilancia}
+  \end{citacao}
+
+  O ``Capitalismo de Vigilância'' de
+  \citeauthoronline{zuboff-capitalismo-vigilancia} oferece uma perspectiva
+  inovadora sobre o uso do poder na era digital, complementando as reflexões de
+  \citeauthoronline{orwell-1984} em seu livro ``1984''. Em seu livro, Zuboff
+  explora como as grandes corporações, as chamadas \textit{big techs}, utilizam
+  a coleta massiva de dados para moldar o comportamento humano e maximizar seus
+  lucros \cite{zuboff-capitalismo-vigilancia}. Este fenômeno revela uma nova
+  forma de poder que transcende fronteiras físicas, operando nos cantos mais
+  íntimos do ciberespaço. Assim como em ``1984'', onde o Estado exerce um
+  controle absoluto sobre a realidade e a verdade, o capitalismo de vigilância
+  confere às empresas tecnológicas um poder extraordinário sobre a informação e
+  as interações online.
+
+  As \textit{big techs} tornam-se arquitetas da realidade
+  digital, influenciando a percepção e as escolhas dos usuários por meio da
+  personalização algorítmica. Ao traçar um paralelo entre essas obras, podemos
+  destacar como ambas alertam sobre os riscos do poder desmedido. Enquanto em
+  ``1984'' o Estado busca controlar o pensamento e a história, no capitalismo
+  de vigilância, as corporações buscam antecipar e moldar desejos e
+  comportamentos, criando uma forma mais sutil, mas igualmente eficaz, de
+  manipulação.
+
+
+  \section{Poder na Era Moderna}
+
+  \citeauthoronline{montesquieu-espirito-leis}, em sua obra ``O Espírito das
+  Leis'', defende a ideia da separação dos poderes como um princípio fundamental
+  para evitar abusos de poder e garantir a liberdade. Ele propõe que o poder
+  deve ser dividido entre o legislativo, executivo e judiciário, cada um
+  exercendo suas funções de maneira independente e equilibrada
+  \cite{montesquieu-espirito-leis}.
+
+  Ao analisar o ``1984'' de \citeauthoronline{orwell-1984} e o ``Capitalismo de
+  Vigilância'' de \citeauthoronline{zuboff-capitalismo-vigilancia}, percebemos
+  uma convergência no alerta para os perigos de concentração de poder.
+  Montesquieu destacaria a importância de impedir que o controle totalitário,
+  seja pelo Estado como em ``1984" ou por grandes corporações como no
+  capitalismo de vigilância, seja centralizado em uma única entidade. A
+  concentração de poder, conforme Montesquieu argumentaria, poderia levar a
+  abusos e à supressão da liberdade. No entanto, as obras de Orwell e Zuboff
+  também mostram desafios específicos da era contemporânea que Montesquieu não
+  pôde prever. Enquanto Montesquieu concentrou-se na separação dos poderes
+  governamentais, as preocupações modernas envolvem entidades não
+  governamentais, como as \textit{big techs}, que exercem um poder significativo
+  sobre a informação e o comportamento, sem necessariamente se enquadrar nas
+  divisões clássicas dos poderes.
+
+  Assim, ao relacionar esses textos, podemos perceber que, embora Montesquieu
+  tenha estabelecido uma base crucial para a compreensão do equilíbrio de poder,
+  as dinâmicas contemporâneas demandam uma adaptação desses princípios para
+  lidar com as novas formas de influência e controle, tanto pelo Estado quanto
+  por entidades privadas. A reflexão sobre a separação de poderes, então, não
+  se limita apenas à esfera governamental, mas se estende a estruturas sociais e
+  tecnológicas que moldam nossa realidade. O controle do poder nas mãos das
+  \textit{big techs} é evidenciado pela sua capacidade de moldar o que é visto,
+  ouvido e compartilhado online. Através da análise algorítmica dos dados
+  coletados, essas empresas podem prever e influenciar decisões, seja na esfera
+  do consumo ou nas escolhas políticas. O poder, assim como descrito por Zuboff,
+  é exercido não apenas para obter lucro, mas para estabelecer uma hegemonia
+  digital que permeia todos os aspectos da vida contemporânea
+  \cite{zuboff-capitalismo-vigilancia}.
+
+  \newpage
+
+  No entanto, assim como a resistência de Winston Smith em ``1984'', a
+  conscientização sobre o capitalismo de vigilância pode abrir caminho para
+  questionamentos e mudanças. Compreender o uso do poder nessas narrativas
+  paralelas oferece uma visão crítica sobre os desafios éticos e sociais que
+  enfrentamos na era digital. As reflexões de Zuboff e Orwell convergem,
+  alertando sobre os perigos de um poder descontrolado, seja nas mãos de um
+  Estado totalitário ou de conglomerados corporativos, instigando a sociedade a
+  repensar as dinâmicas de poder que moldam nosso presente e futuro.
+
+  % ----------
+  % Conclusão.
+  % ----------
+  \chapter{Conclusão}
+
+  Em conclusão, a análise dos textos anteriores, que abordaram temas como
+  controle social, poder na era digital, e a influência de algoritmos, oferece
+  uma visão multifacetada sobre os desafios éticos e sociais que enfrentamos na
+  sociedade contemporânea. A interseção das ideias de
+  \citeauthoronline{montesquieu-espirito-leis}, \citeauthoronline{orwell-1984},
+  \citeauthoronline{zuboff-capitalismo-vigilancia} e
+  \citeauthoronline{maquiavel-principe} destaca a relevância desses pensadores
+  para compreendermos as complexidades da vigilância digital, a manipulação da
+  informação e a dinâmica de controle em diversas esferas.
+
+  A obra de \citeauthoronline{zuboff-capitalismo-vigilancia}, ao explorar o
+  capitalismo de vigilância, acrescenta uma camada crucial à discussão,
+  revelando como as corporações, na busca incessante por dados, desempenham um
+  papel central no controle social. A autora explica e destaca diversos
+  conceitos importantes e triviais para o entendimento do como, porque e a
+  relevância desse debate. É perceptível após a leitura das obras citadas, em
+  especial a obra sobre vigilância digital de
+  \citeauthoronline{zuboff-capitalismo-vigilancia}, o que acontece atualmente no
+  mundo quando se fala a respeito de controle social. Além disso, ela propõe
+  ideias extremamente complexas e profundas na forma de funcionamento das
+  interações sociais que são diretamente ditadas pela economia e pelos
+  controladores, apresentando, por exemplo, o conceito de capitalismo de
+  vigilância.
+
+  Em última análise, a convergência dessas ideias ressalta a necessidade
+  contínua de reflexão crítica e responsabilidade ética na era digital. O
+  desafio é encontrar um equilíbrio entre a conveniência proporcionada pela
+  personalização digital e a preservação dos princípios fundamentais de
+  liberdade, transparência e separação de poderes. A compreensão desses dilemas
+  éticos é essencial para forjar um caminho que harmonize a inovação tecnológica
+  com os valores que fundamentam uma sociedade justa e livre.
+
+  % -----------------------
+  % Elementos pós-textuais.
+  % -----------------------
+  \postextual
+
+  % ---------------------------
+  % Referências bibliográficas.
+  % ---------------------------
+  \bibliography{refs}
+\end{document}
